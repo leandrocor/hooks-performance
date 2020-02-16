@@ -1,6 +1,6 @@
 import React from "react"
 
-const StatusContainer = ({ status, handleStatus }) => {
+export const Status = ({ status, handleStatus }) => {
   console.log("render Status")
 
   const printStatusValue = () => {
@@ -27,7 +27,3 @@ const StatusContainer = ({ status, handleStatus }) => {
     </div>
   )
 }
-
-export const Status = React.memo(StatusContainer, (prevProps, nextProps) => {
-  return prevProps.status === nextProps.status
-})

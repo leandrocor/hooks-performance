@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react"
+import React, { useState } from "react"
 import { Priority } from "./Components/Priority"
 import { Title } from "./Components/Title"
 import { Status } from "./Components/Status"
@@ -10,23 +10,17 @@ export const App = () => {
   const [points, setPoints] = useState(0)
   const [status, setStatus] = useState(1)
 
-  const handlePriority = useCallback(
-    e => {
-      setPriority(e.target.value)
-    },
-    [setPriority]
-  )
+  const handlePriority = e => {
+    setPriority(e.target.value)
+  }
 
-  const handleStatus = useCallback(
-    e => {
-      setStatus(JSON.parse(e.target.value))
-    },
-    [setStatus]
-  )
+  const handleStatus = e => {
+    setStatus(JSON.parse(e.target.value))
+  }
 
-  const handleStoryPoint = useCallback(() => {
+  const handleStoryPoint = () => {
     setPoints(p => p + 1)
-  }, [setPoints])
+  }
 
   return (
     <div>
@@ -43,7 +37,3 @@ export const App = () => {
     </div>
   )
 }
-
-/* const button = useMemo(() => {
-    return <StoryPoint handleStoryPoint={handleStoryPoint} />
-  }, []) */

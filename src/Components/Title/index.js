@@ -1,6 +1,6 @@
 import React from "react"
 
-const TitleComponent = ({ title }) => {
+export const Title = ({ title }) => {
   console.log("Render title")
   return (
     <>
@@ -9,7 +9,3 @@ const TitleComponent = ({ title }) => {
     </>
   )
 }
-
-export const Title = React.memo(TitleComponent, (prevProps, nextProps) => {
-  return prevProps.title === nextProps.title
-})
