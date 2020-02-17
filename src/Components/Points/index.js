@@ -1,6 +1,10 @@
 import React from "react"
 
-export const Points = ({ points }) => {
+const PointsComponent = ({ points }) => {
   console.log("Render Points")
   return <p>Story point: {points}</p>
 }
+
+export const Points = React.memo(PointsComponent, (prevProps, nextProps) => {
+  return prevProps.points === nextProps.points
+})

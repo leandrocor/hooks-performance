@@ -9,3 +9,7 @@ export const Title = ({ title }) => {
     </>
   )
 }
+
+/* export const Title = React.memo(TitleComponent, (prevProps, nextProps) => {
+  return prevProps.title === nextProps.title
+}) */

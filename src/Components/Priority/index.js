@@ -1,6 +1,6 @@
 import React from "react"
 
-export const Priority = ({ priority, handlePriority }) => {
+const PriorityComponent = ({ priority, handlePriority }) => {
   console.log("Render Priority")
 
   return (
@@ -14,3 +14,10 @@ export const Priority = ({ priority, handlePriority }) => {
     </>
   )
 }
+
+export const Priority = React.memo(
+  PriorityComponent,
+  (prevProps, nextProps) => {
+    return prevProps.priority === nextProps.priority
+  }
+)
